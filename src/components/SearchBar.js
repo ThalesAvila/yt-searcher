@@ -3,12 +3,21 @@ import React from 'react';
 class SearchBar extends React.Component {
   state = { term: '' };
 
-  onInputChange = () => {};
+  onInputChange = e => {
+    this.setState({ term: e.target.value });
+  };
+
+  onFormSubmit = e => {
+    e.preventDefault();
+    console.log(this.state.term);
+
+    // TODO: Chamar Callback do component pai
+  };
 
   render() {
     return (
       <div className="search-bar ui segment">
-        <form className="ui form">
+        <form onSubmit={this.onFormSubmit} className="ui form">
           <div className="field">
             <label htmlFor="">Video Search</label>
             <input
