@@ -1,5 +1,4 @@
 import React from 'react';
-import youtube from '../api/youtube';
 
 class SearchBar extends React.Component {
   state = { term: '' };
@@ -10,7 +9,7 @@ class SearchBar extends React.Component {
 
   onFormSubmit = e => {
     e.preventDefault();
-    console.log(this.state.term);
+    this.props.onTermSubmit(this.state.term);
 
     // TODO: Chamar Callback do component pai
   };
