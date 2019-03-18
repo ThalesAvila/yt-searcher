@@ -1,4 +1,5 @@
 import React from 'react';
+import youtube from '../api/youtube';
 
 class SearchBar extends React.Component {
   state = { term: '' };
